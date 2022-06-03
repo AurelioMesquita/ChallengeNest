@@ -22,15 +22,21 @@
     "typeorm": "ts-node ./node_modules/typeorm/cli.js --config src/config/orm.ts"
   },
   "dependencies": {
+    "@nestjs/apollo": "^10.0.14",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
-    "@nestjs/graphql": "^10.0.13",
+    "@nestjs/graphql": "^10.0.15",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^8.0.4",
+    "@types/graphql": "^14.5.0",
+    "apollo-server-express": "^3.8.1",
+    "dataloader": "^2.1.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "sqlite3": "^5.0.8"
+    "sqlite3": "^5.0.8",
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.2.45"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

@@ -11,7 +11,7 @@ import {
 } from 'typeorm';
 import User from './user-entity';
 @ObjectType()
-@Entity({ name: 'message' })
+@Entity({ name: 'messages' })
 export default class Message {
   @Field()
   @PrimaryGeneratedColumn()
@@ -20,6 +20,10 @@ export default class Message {
   @Field()
   @Column({ name: 'user_id' })
   userId: number;
+
+  @Field()
+  @Column()
+  content: string;
 
   @Field()
   @CreateDateColumn({ name: 'created_at' })
