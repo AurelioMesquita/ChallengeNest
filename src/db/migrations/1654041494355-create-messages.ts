@@ -5,7 +5,7 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export class createMessages1654041494355 implements MigrationInterface {
+export class createMessages1585025829086 implements MigrationInterface {
   private table = new Table({
     name: 'messages',
     columns: [
@@ -13,7 +13,7 @@ export class createMessages1654041494355 implements MigrationInterface {
         name: 'id',
         type: 'integer',
         isPrimary: true,
-        isGenerated: true,
+        isGenerated: true, // Auto-increment
         generationStrategy: 'increment',
       },
       {
@@ -30,12 +30,14 @@ export class createMessages1654041494355 implements MigrationInterface {
       {
         name: 'created_at',
         type: 'timestamptz',
+        isPrimary: false,
         isNullable: false,
         default: 'now()',
       },
       {
         name: 'updated_at',
         type: 'timestamptz',
+        isPrimary: false,
         isNullable: false,
         default: 'now()',
       },
@@ -49,11 +51,11 @@ export class createMessages1654041494355 implements MigrationInterface {
     referencedTableName: 'users',
   });
 
-  public async up(queryRunner: QueryRunner): Promise<void> {
+  public async up(queryRunner: QueryRunner): Promise<any> {
     await queryRunner.createTable(this.table);
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {
+  public async down(queryRunner: QueryRunner): Promise<any> {
     await queryRunner.dropTable(this.table);
   }
 }

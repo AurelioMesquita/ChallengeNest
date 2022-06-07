@@ -1,20 +1,4 @@
 import { Field, InputType } from '@nestjs/graphql';
-import UserInput from './users.input';
-
-@InputType()
-class MessageUserConnectInput {
-  @Field()
-  readonly id: number;
-}
-
-@InputType()
-class messageUserInput {
-  @Field({ nullable: true })
-  readonly connect: MessageUserConnectInput;
-
-  @Field({ nullable: true })
-  readonly create: UserInput;
-}
 
 @InputType()
 export default class MessageInput {
@@ -22,5 +6,14 @@ export default class MessageInput {
   readonly content: string;
 
   @Field()
-  readonly user: messageUserInput;
+  readonly userId: number;
+}
+
+@InputType()
+export class DeleteMessageInput {
+  @Field()
+  readonly id: number;
+
+  @Field()
+  readonly userId: number;
 }
