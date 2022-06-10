@@ -27,7 +27,7 @@ export default class MessageResolver {
     return this.repoService.messageRepo.find({ where: { userId } });
   }
 
-  @Query(() => Message)
+  @Query(() => Message, { nullable: true })
   public async getMessage(@Args('id') id: number): Promise<Message> {
     return this.repoService.messageRepo.findOne(id);
   }

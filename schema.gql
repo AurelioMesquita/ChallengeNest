@@ -28,7 +28,7 @@ type Query {
   getUser(id: Float!): User
   getMessages: [Message!]!
   getMessageFromUser(userId: Float!): Message!
-  getMessage(id: Float!): Message!
+  getMessage(id: Float!): Message
 }
 
 type Mutation {
